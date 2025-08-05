@@ -1,5 +1,14 @@
+import data from "./../data.json";
+import JobItem from "./components/jobItem";
+
 function App() {
-  return <>Starting Project</>;
+  return (
+    <>
+      {data.map((job) => (
+        <JobItem key={job.id} jobObj={job} />
+      ))}
+    </>
+  );
 }
 
 export default App;
