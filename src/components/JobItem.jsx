@@ -1,7 +1,4 @@
-function JobItem({ jobObj }) {
-  console.log(jobObj);
-  console.log(jobObj.languages);
-
+function JobItem({ jobObj, tagUpdate }) {
   return (
     <div
       className={`job-item rounded-md shadow-[0_10px_15px_-3px_rgba(91,164,164,0.3)] flex items-center justify-between flex-wrap gap-8 sm:gap-4 p-6.5 w-full max-w-5xl pt-15 sm:pt-6.5 bg-white relative ${
@@ -35,12 +32,30 @@ function JobItem({ jobObj }) {
         </div>
       </div>
       <div className="job-holdings w-full sm:w-auto flex flex-wrap gap-4 text-(--Green-400) font-semibold *:bg-(--Green-50) *:px-2 *:py-1 text-sm *:rounded-sm *:cursor-pointer *:hover:bg-(--Green-400) *:hover:text-(--Green-50) transition-all relative before:absolute before:w-full before:h-0.5 before:bg-(--Gray-400) before:top-[-18px] sm:before:hidden">
-        <button className="job-role">{jobObj.role}</button>
-        <button className="job-level">{jobObj.level}</button>
-
+        <button className="job-role" onClick={() => tagUpdate(jobObj.role)}>
+          {jobObj.role}
+        </button>
+        <button className="job-level" onClick={() => tagUpdate(jobObj.level)}>
+          {jobObj.level}
+        </button>
+        {jobObj.tools.map((tool, index) => {
+          return (
+            <button
+              key={index}
+              className="job-tool"
+              onClick={() => tagUpdate(tool)}
+            >
+              {tool}
+            </button>
+          );
+        })}
         {jobObj.languages.map((language, index) => {
           return (
-            <button key={index} className="job-language">
+            <button
+              key={index}
+              className="job-language"
+              onClick={() => tagUpdate(language)}
+            >
               {language}
             </button>
           );
