@@ -5,5 +5,6 @@ import eslint from "vite-plugin-eslint";
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: "/fm-solution-Job-listings-with-filtering/",
   plugins: [react(), tailwindcss(), eslint()],
 });
