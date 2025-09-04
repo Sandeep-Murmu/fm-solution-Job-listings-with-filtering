@@ -1,6 +1,6 @@
 function JobTagFilter({ tags, removeTag, clearTags }) {
   return (
-    <div className="tag-container w-full max-w-5xl px-8 py-4 bg-white shadow-[0_10px_15px_-3px_rgba(91,164,164,0.3)] mx-auto rounded-md flex justify-between">
+    <div className="tag-container w-full max-w-5xl px-8 py-4 bg-white shadow-[0_10px_15px_-3px_rgba(91,164,164,0.3)] mx-auto rounded-md flex justify-between relative top-[-32px] mb-[-32px]">
       <div className="tag-lists flex flex-wrap gap-4">
         {tags.map((tag, index) => {
           return (
