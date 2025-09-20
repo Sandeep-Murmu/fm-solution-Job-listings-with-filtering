@@ -33,7 +33,7 @@ function App() {
 
   return (
     <>
-      <div className="top-background w-full h-40 sm:h-50 bg-[url(./images/bg-header-mobile.svg)] bg-cover bg-center sm:bg-[url(./images/bg-header-desktop.svg)] bg-(--Green-400)"></div>
+      <div className="top-background w-full h-40 sm:h-50 bg-[url(./src/assets/images/bg-header-mobile.svg)] bg-cover bg-center sm:bg-[url(./src/assets/images/bg-header-desktop.svg)] bg-(--Green-400)"></div>
       <div className="px-6">
         {tags.length ? (
           <JobTagFilter
